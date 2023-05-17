@@ -1,28 +1,46 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask&demo-title=Flask%20%2B%20Vercel&demo-description=Use%20Flask%202%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+# A (very) basic news scraper
 
-# Flask + Vercel
+This is a web application that scrapes news articles based on a user input. It's built using Flask for the back-end and jQuery and Bootstrap for the front-end.
 
-This example shows how to use Flask 2 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+## Live Demo
+You can see a live demo of the application at https://flask-hazel-ten.vercel.app/
 
-## Demo
+## Features
+- User can submit a query via a form.
+- Application processes the query and generates a google news rss link to fetch a list of articles
+- Article information such as image, headline, article body, link to the full article, date of publish are extracted for each link using the [news-please](https://github.com/fhamborg/news-please) library
+- Articles are displayed in a card layout with a modern, dark-themed design.
+- 
+## Local Development
 
-https://flask-python-template.vercel.app/
+If you want to run the application on your local machine, follow these steps:
 
-## How it Works
+1. Clone the repository:
 
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
+git clone https://github.com/hoodanikhil/flask.git
+cd your-repo-name
 
-## Running Locally
+2. Install the required Python packages:
 
-```bash
-npm i -g vercel
-vercel dev
+pip install -r requirements.txt
+
+3. Run the Flask application:
+
+python index.py
+
+The application will be available at http://localhost:5000.
+
+## Deployment
+
+This application is deployed on Vercel as a serverless function. To deploy your own version, you can follow these steps:
+
+1. Fork the repository and clone it to your local machine.
+2. Create a new project on [Vercel](https://vercel.com) and link it to your forked repository.
+3. Vercel will automatically detect the Python runtime and build and deploy the application.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
 
-Your Flask application is now available at `http://localhost:3000`.
-
-## One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask&demo-title=Flask%20%2B%20Vercel&demo-description=Use%20Flask%202%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+Please replace the placeholders (`https://your-project-name.vercel.app`, `https://github.com/yourusername/your-repo-name.git`) with the actual links to your deployed application and your GitHub repository.
