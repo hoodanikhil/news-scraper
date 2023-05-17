@@ -1,0 +1,78 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #343a40;
+            color: #ECF0F1;
+        }
+        h1 {
+            color: #ECF0F1;
+        }
+        a {
+            color: #F39C12;
+        }
+        .card {
+            background-color: #2C3E50;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .card-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .form-control, .btn {
+            border: none;
+        }
+        .btn {
+            background-color: #F39C12;
+        }
+        #loadingMessage {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+        .spinner {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="container mt-5">
+    <h1 class="text-center mb-4">{{ message }}</h1>
+    <form id="myForm" class="form-inline justify-content-center mb-4">
+        <input type="text" id="myTextField" name="input_text" placeholder="Enter company name" class="form-control mr-2">
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+    <div id="loadingMessage" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="resultList"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
