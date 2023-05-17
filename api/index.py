@@ -73,11 +73,15 @@ def home():
 @app.route('/button', methods=['POST'])
 def button():
     input_text = request.form.get('text')
+    num_articles = request.form.get('num_articles')
+    if num_articles is not None and num_articles.isnumeric():
+        num_articles = int(num_articles)
+    else:
+        num_articles = 5
     # You can do any processing with input_text here
-    news_links = get_news_from_search_query(input_text) #get the news links
+    news_links = get_news_from_search_query(input_text, num_articles) #get the news links
     articles = get_articles_from_news_links(news_links) #get the articles
     return jsonify({'result': articles})
 
-
-#if __name__ == '__main__':
-#    app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
