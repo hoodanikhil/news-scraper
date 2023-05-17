@@ -10,7 +10,7 @@ You can see a live demo of the application at https://flask-hazel-ten.vercel.app
 - Application processes the query and generates a google news rss link to fetch a list of articles
 - Article information such as image, headline, article body, link to the full article, date of publish are extracted for each link using the [news-please](https://github.com/fhamborg/news-please) library
 - Articles are displayed in a card layout with a modern, dark-themed design.
-- 
+
 ## Local Development
 
 If you want to run the application on your local machine, follow these steps:
@@ -37,10 +37,3 @@ This application is deployed on Vercel as a serverless function. To deploy your 
 1. Fork the repository and clone it to your local machine.
 2. Create a new project on [Vercel](https://vercel.com) and link it to your forked repository.
 3. Vercel will automatically detect the Python runtime and build and deploy the application.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-Please replace the placeholders (`https://your-project-name.vercel.app`, `https://github.com/yourusername/your-repo-name.git`) with the actual links to your deployed application and your GitHub repository.
