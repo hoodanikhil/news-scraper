@@ -17,7 +17,7 @@ If you want to run the application on your local machine, follow these steps:
 
 1. Clone the repository:
 
-git clone https://github.com/hoodanikhil/flask.git
+git clone https://github.com/hoodanikhil/news-scraper.git
 cd your-repo-name
 
 2. Install the required Python packages:
